@@ -1,4 +1,4 @@
-FROM jwilder/nginx-proxy:0.4.0
+FROM trippd6/nginx-proxy
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV YES_FLAG=-y
