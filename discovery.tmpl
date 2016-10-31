@@ -1,0 +1,14 @@
+{{ range $key, $value := . }}
+        {{ if hasSuffix "_db_1" .Name }}
+        {{ if .Env.DOMAIN_NAME }}
+                {{ $name := .Name }}
+                {{ $domain := .Env.DOMAIN_NAME }}
+                {{ range $key, $value := .Addresses }}
+{{ $domain }} {{ .HostPort }}
+                {{ end }}
+                {{/* json .  */}}
+        {{ end }}
+        {{ end }}
+{{ end }}
+
+

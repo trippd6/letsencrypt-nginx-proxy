@@ -28,6 +28,8 @@ RUN wget https://github.com/jwilder/docker-gen/releases/download/$DOCKER_GEN_VER
 COPY etc /etc
 COPY ssl.tmpl /app/
 COPY createSSL.sh /
+COPY discovery.tmpl /app/
+RUN mkdir -p /var/www/html/discovery && touch /var/www/html/discovery/index.html && chmod a+r /var/www/html/discovery/index.html
 RUN chmod +x /createSSL.sh
 COPY Procfile /app/Procfile
 COPY cronfile /app/cronfile
